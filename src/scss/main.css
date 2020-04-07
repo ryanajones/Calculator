@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css?family=Glegoo:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Glegoo:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@font-face {
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+}
+
+.grid, body, body #container, body #container #button-wrapper, body #container #button-wrapper #delete {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.common-button-styles, body #container #button-wrapper #clear, body #container #button-wrapper #delete, body #container #button-wrapper #divide, body #container #button-wrapper #multiply, body #container #button-wrapper #subtract, body #container #button-wrapper #add, body #container #button-wrapper #equals, body #container #button-wrapper #decimal, body #container #button-wrapper #zero, body #container #button-wrapper #one, body #container #button-wrapper #two, body #container #button-wrapper #three, body #container #button-wrapper #four, body #container #button-wrapper #five, body #container #button-wrapper #six, body #container #button-wrapper #seven, body #container #button-wrapper #eight, body #container #button-wrapper #nine {
+  border: none;
+  outline: none;
+  color: white;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 22px;
+}
+
+.common-button-styles:hover, body #container #button-wrapper #clear:hover, body #container #button-wrapper #delete:hover, body #container #button-wrapper #divide:hover, body #container #button-wrapper #multiply:hover, body #container #button-wrapper #subtract:hover, body #container #button-wrapper #add:hover, body #container #button-wrapper #equals:hover, body #container #button-wrapper #decimal:hover, body #container #button-wrapper #zero:hover, body #container #button-wrapper #one:hover, body #container #button-wrapper #two:hover, body #container #button-wrapper #three:hover, body #container #button-wrapper #four:hover, body #container #button-wrapper #five:hover, body #container #button-wrapper #six:hover, body #container #button-wrapper #seven:hover, body #container #button-wrapper #eight:hover, body #container #button-wrapper #nine:hover {
+  color: black;
+  outline: 1px solid #757575;
+}
+
+.button-color-one, body #container #button-wrapper #decimal, body #container #button-wrapper #zero, body #container #button-wrapper #one, body #container #button-wrapper #two, body #container #button-wrapper #three, body #container #button-wrapper #four, body #container #button-wrapper #five, body #container #button-wrapper #six, body #container #button-wrapper #seven, body #container #button-wrapper #eight, body #container #button-wrapper #nine {
+  background: #505050;
+}
+
+.button-color-two, body #container #button-wrapper #delete, body #container #button-wrapper #divide, body #container #button-wrapper #multiply, body #container #button-wrapper #subtract, body #container #button-wrapper #add {
+  background: #696969;
+}
+
+.button-color-three, body #container #button-wrapper #clear {
+  background-color: #430d27;
+}
+
+.button-color-four, body #container #button-wrapper #equals {
+  background: #c94e4e;
+}
+
+*,
+*::before,
+::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#226089), to(#09928b));
+  background-image: linear-gradient(to bottom right, #226089, #09928b);
+  overflow: hidden;
+}
+
+body #container {
+  -ms-grid-rows: 20% 80%;
+      grid-template-rows: 20% 80%;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+      grid-template-areas: "display" "buttons";
+  width: 320px;
+  height: 385px;
+  padding: 2px;
+  border: 2px solid #47476b;
+  background-color: black;
+}
+
+body #container #display-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: display;
+  padding: 4px;
+  background: black;
+  font-family: "Digital";
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+body #container #display-container #prev-operand {
+  color: orange;
+  font-size: 20px;
+}
+
+body #container #display-container #display {
+  color: white;
+}
+
+body #container #button-wrapper {
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "clear del div mult" "seven eight nine sub" "four five six add" "one two three equals" "zero zero dec equals";
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: buttons;
+  grid-gap: 1px;
+  padding: 2px;
+  font-family: "Archivo", sans-serif;
+  font-size: 10px;
+}
+
+body #container #button-wrapper #clear {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: clear;
+}
+
+body #container #button-wrapper #delete {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: del;
+}
+
+body #container #button-wrapper #backspace {
+  font-size: 20px;
+}
+
+body #container #button-wrapper #backspace::before {
+  font-size: 20px;
+}
+
+body #container #button-wrapper #divide {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: div;
+}
+
+body #container #button-wrapper #multiply {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: mult;
+}
+
+body #container #button-wrapper #subtract {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: sub;
+}
+
+body #container #button-wrapper #add {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: add;
+}
+
+body #container #button-wrapper #equals {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: equals;
+}
+
+body #container #button-wrapper #decimal {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: dec;
+}
+
+body #container #button-wrapper #zero {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: zero;
+}
+
+body #container #button-wrapper #one {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: one;
+}
+
+body #container #button-wrapper #two {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: two;
+}
+
+body #container #button-wrapper #three {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: three;
+}
+
+body #container #button-wrapper #four {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: four;
+}
+
+body #container #button-wrapper #five {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: five;
+}
+
+body #container #button-wrapper #six {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: six;
+}
+
+body #container #button-wrapper #seven {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: seven;
+}
+
+body #container #button-wrapper #eight {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: eight;
+}
+
+body #container #button-wrapper #nine {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: nine;
+}
+/*# sourceMappingURL=main.css.map */

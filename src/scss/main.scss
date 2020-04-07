@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css?family=Glegoo:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Glegoo:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+@font-face {
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7")
+      format("svg");
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.common-button-styles {
+  border: none;
+  outline: none;
+  color: white;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 22px;
+}
+
+.common-button-styles:hover {
+  color: black;
+  outline: 1px solid rgb(117, 117, 117);
+}
+
+.button-color-one {
+  background: #505050;
+}
+
+.button-color-two {
+  background: #696969;
+}
+
+.button-color-three {
+  background-color: #430d27;
+}
+
+.button-color-four {
+  background: #c94e4e;
+}
+
+*,
+*::before,
+::after {
+  box-sizing: border-box;
+  font-size: 30px;
+  user-select: none;
+}
+
+body {
+  @extend .grid;
+  height: 100vh;
+  margin: 0;
+  background-image: linear-gradient(to bottom right, #226089, #09928b);
+  overflow: hidden;
+
+  #container {
+    @extend .grid;
+    grid-template-rows: 20% 80%;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "display"
+      "buttons";
+    width: 320px;
+    height: 385px;
+    padding: 2px;
+    border: 2px solid #47476b;
+    background-color: rgb(0, 0, 0);
+
+    #display-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-direction: column;
+      grid-area: display;
+      padding: 4px;
+      background: rgb(0, 0, 0);
+      font-family: "Digital";
+      word-wrap: break-word;
+      word-break: break-all;
+
+      #prev-operand {
+        color: orange;
+        font-size: 20px;
+      }
+
+      #display {
+        color: white;
+      }
+    }
+
+    #button-wrapper {
+      @extend .grid;
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        "clear del div mult" "seven eight nine sub"
+        "four five six add" "one two three equals" "zero zero dec equals";
+      grid-area: buttons;
+      grid-gap: 1px;
+
+      padding: 2px;
+      font-family: "Archivo", sans-serif;
+      font-size: 10px;
+
+      #clear {
+        @extend .common-button-styles;
+        @extend .button-color-three;
+        grid-area: clear;
+      }
+
+      #delete {
+        @extend .grid;
+        @extend .common-button-styles;
+        @extend .button-color-two;
+        grid-area: del;
+      }
+
+      #backspace {
+        font-size: 20px;
+      }
+
+      #backspace::before {
+        font-size: 20px;
+      }
+
+      #divide {
+        @extend .common-button-styles;
+        @extend .button-color-two;
+        grid-area: div;
+      }
+
+      #multiply {
+        @extend .common-button-styles;
+        @extend .button-color-two;
+        grid-area: mult;
+      }
+
+      #subtract {
+        @extend .common-button-styles;
+        @extend .button-color-two;
+        grid-area: sub;
+      }
+
+      #add {
+        @extend .common-button-styles;
+        @extend .button-color-two;
+        grid-area: add;
+      }
+
+      #equals {
+        @extend .common-button-styles;
+        @extend .button-color-four;
+        grid-area: equals;
+      }
+
+      #decimal {
+        @extend .common-button-styles;
+        @extend .button-color-one;
+        grid-area: dec;
+      }
+
+      #zero {
+        @extend .common-button-styles;
+        @extend .button-color-one;
+        grid-area: zero;
+      }
+
+      #one {
+        @extend .common-button-styles;
+        @extend .button-color-one;
+        grid-area: one;
+      }
+
+      #two {
+        @extend .common-button-styles;
+        @extend .button-color-one;
+        grid-area: two;
+      }
+
+      #three {
+        @extend .common-button-styles;
+        @extend .button-color-one;
+        grid-area: three;
+      }
+
+      #four {
+        @extend .common-button-styles;
+        @extend .button-color-one;
+        grid-area: four;
+      }
+
+      #five {
+        @extend .common-button-styles;
+        @extend .button-color-one;
+        grid-area: five;
+      }
+
+      #six {
+        @extend .common-button-styles;
+        @extend .button-color-one;
+        grid-area: six;
+      }
+
+      #seven {
+        @extend .common-button-styles;
+        @extend .button-color-one;
+        grid-area: seven;
+      }
+
+      #eight {
+        @extend .common-button-styles;
+        @extend .button-color-one;
+        grid-area: eight;
+      }
+
+      #nine {
+        @extend .common-button-styles;
+        @extend .button-color-one;
+        grid-area: nine;
+      }
+    }
+  }
+}
