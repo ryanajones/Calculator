@@ -1,6 +1,10 @@
 # Calculator
 
-> Basic calculator application
+> A calculator application capable of making addition, subtraction, multiplication, and division operations. React's state and virtual DOM features are used to keep track, compute, and display the equations submitted to the calculator. 
+
+## Technologies Used
+
+HTML SCSS JavaScript React
 
 ## CodePen Link
 
